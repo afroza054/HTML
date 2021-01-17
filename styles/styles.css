@@ -1,0 +1,251 @@
+html,
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", "Segoe UI", Geneva, Verdana, sans-serif;
+}
+.navbar {
+  background-color: #312450; /*#5e42a6*/
+  color: white;
+  display: flex;
+  padding: 0 0.5rem;
+}
+.brand {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+.brand:hover {
+  background-color: #5e42a6; /* #009688;*/
+}
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.navbar-nav li a {
+  padding: 0 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  text-align: left;
+  color: white;
+  white-space: nowrap;
+}
+.navbar-nav li a:hover {
+  background-color: #5e42a6;
+}
+.container {
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+.full-width {
+  min-height: calc(100vh - 100px);
+}
+.footer {
+  background-color: #312450; /*#5e42a6*/
+  color: white;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.footer p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.front-cover {
+  padding: 0;
+  margin: 0;
+  background: #5e42a6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 86.66px);
+}
+.front-cover h1 {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin: 0.75rem 0.5rem;
+}
+.front-cover p {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: bold;
+  margin: 0.5rem 0.5rem;
+  padding-bottom: 0.5 rem;
+}
+/* .front-cover .p-divider {
+  border-bottom: solid 0.1px #e0f2f1;
+  padding-bottom: 0.75rem;
+} */
+hr.styled {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.img-circle {
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.bar {
+  display: flex;
+}
+.right {
+  justify-content: flex-end;
+}
+/*
+buttons
+*/
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+/* Table */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  color: #212529;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+.table tbody td {
+  vertical-align: middle;
+}
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+/*
+Form
+*/
+.form {
+  width: 65%;
+  margin: 0 auto;
+}
+.field {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0.75rem 0.5rem;
+}
+.label {
+  width: 150px;
+  font-weight: 600;
+}
+.control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+textarea.control {
+  height: auto;
+}
+::-ms-browse {
+  color: #fff;
+  background-color: #007bff;
+}
+::-webkit-file-upload-button {
+  color: #fff;
+  background-color: #007bff;
+  padding: 0.15rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+/*
+Error
+*/
+.error {
+  display: none;
+  width: 100%;
+  margin-left: 150px;
+  color: red;
+  font-size: 0.75rem;
+}

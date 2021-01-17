@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pets on sale</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(() => {
+        $.ajax({
+          type: "GET",
+          url: "/petlist",
+          dataType: "json"
+        }).done(r => {
+          console.log(r);
+          $.each(r, (i, p) => {
+            $("#tblBody").append(
+              `<tr>
+                    <td><img class='img-circle' src='${
+                      p.picture
+                    }' width='50px' /></td>
+                    <td>${p.petName}</td>
+                    <td>${p.type}</td>
+                    <td>${p.price.toFixed(2)}</td>
+                    <td>${p.description}</td>
+                    <td>
+                      <a href="/edit/${p.id}" class="btn btn-primary">Edit</a>
+                      
+                    </td>
+                </tr>`
+            );
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Pets On Sale</a>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pets.html">Pets</a></li>
+      </ul>
+    </nav>
+    <div class="container full-width">
+      <h1 style="margin: .75rem .5rem;">Pet List</h1>
+      <div class="bar right">
+        <a href="add.html" class="btn btn-primary">Add New</a>
+      </div>
+      <table class="table" cellspcing="0">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Pet Type</th>
+            <th>Pet Breed</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tblBody"></tbody>
+      </table>
+    </div>
+    <footer class="footer">
+      <p>Project by Afroza Jabib, 1255708</p>
+    </footer>
+  </body>
+</html>

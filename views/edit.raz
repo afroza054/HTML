@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pets on sale</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#type").change(() => {
+          if ($("#type").val() == "") {
+            $("#typeerror").show();
+          } else {
+            $("#typeerror").hide();
+          }
+        });
+        $("#name").change(() => {
+          if ($("#name").val() == "") {
+            $("#nameerror").show();
+          } else {
+            $("#nameerror").hide();
+          }
+        });
+        $('#price').change(()=>{
+          if ($("#price").val() == "") {
+            $("#priceerror").show();
+          }
+          else{
+            $("#priceerror").hide();
+          }
+        })
+        $("#description").change(() => {
+          if ($("#description").val() == "") {
+            $("#descerror").show();
+          } else {
+            $("#descerror").hide();
+          }
+        });
+       
+        $("#save").click(() => {
+          var isValid = true;
+          if ($("#name").val() == "") {
+            $("#nameerror").show();
+            isValid = false;
+          }
+          if ($("#type").val() == "") {
+            $("#typeerror").show();
+            isValid = false;
+          }
+          if ($("#description").val() == "") {
+            $("#descerror").show();
+            isValid = false;
+          }
+          if ($("#price").val() == "") {
+            $("#priceerror").show();
+            isValid = false;
+          }
+         
+          return isValid;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Pets On Sale</a>
+      <ul class="navbar-nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pets.html">Pets</a></li>
+      </ul>
+    </nav>
+    <div class="container full-width">
+    
+      <div class="form">
+        <h1 style="margin: .75rem .5rem;">Edit Pet</h1>
+        <form method="POST" action="/edit/@Model.id">
+          <div class="field">
+            <label for="name" class="label">Pet Name</label>
+            <input type="text" class="control" name="name" id="name" value="@Model.petName" />
+          </div>
+          <div class="error" id="nameerror">Pet name is required.</div>
+          <div class="field">
+            <label for="name" class="label">Pet Type</label>
+            <select type="text" class="control" name="type" id="type">
+              <option value=""  >Select pet type</option>
+              <option value="Dog" @(Model.type =='Dog' ? 'selected': '')>Dog</option>
+              <option value="Cat" @(Model.type =='Cat' ? 'selected': '')>Cat</option>
+            </select>
+          </div>
+          <div class="error" id="typeerror">Pet type is required.</div>
+          <div class="field">
+            <label for="price" class="label">Pet Price</label>
+            <input type="text" class="control" name="price" id="price" value="@Model.price" />
+          </div>
+          <div class="error" id="priceerror">Pet price is required.</div>
+          <div class="field">
+            <label for="description" class="label">Pet Description</label>
+            <textarea
+              rows="3"
+              type="text"
+              class="control"
+              name="description"
+              id="description"
+            >
+            @Model.description
+            </textarea>
+          </div>
+          <div class="error" id="descerror">Pet description is required.</div>
+          
+          <div class="field right">
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            &nbsp;
+            <button type="submit" id="save" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </form>
+        <a href="/pets.html">Back to list</a>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Project by Afroza Jabib, 1255708</p>
+    </footer>
+  </body>
+</html>
